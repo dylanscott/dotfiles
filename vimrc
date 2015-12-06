@@ -1,3 +1,4 @@
+set shell=/bin/zsh
 set nocompatible
 syntax enable
 
