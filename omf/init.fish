@@ -1,3 +1,6 @@
+# aliases
+source $OMF_CONFIG/abbreviations.fish
+
 # vi mode hype
 fish_vi_mode
 
