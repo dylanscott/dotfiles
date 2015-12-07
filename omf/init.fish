@@ -5,8 +5,8 @@ source $OMF_CONFIG/abbreviations.fish
 fish_vi_mode
 
 function fish_mode_prompt
-# don't use builtin vi-mode indicator
+  # don't use builtin vi-mode indicator
 end
 
 # always be multiplexing
-# test $TERM != "screen"; and exec tmux
+test $TERM != "screen-256color"; and exec tmux
