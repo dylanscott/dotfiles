@@ -109,3 +109,5 @@ set termencoding=utf-8
 let base16colorspace=256
 set background=dark
 colorscheme base16-ocean
+
+set hlsearch
