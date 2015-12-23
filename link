@@ -4,3 +4,5 @@ ln -s $HOME/.dotfiles/vimrc $HOME/.vimrc
 ln -s $HOME/.dotfiles/vimrc.bundles $HOME/.vimrc.bundles
 ln -s $HOME/.dotfiles/tmux.conf $HOME/.tmux.conf
 ln -s $HOME/.dotfiles/zshrc $HOME/.zshrc
+ln -s $HOME/.dotfiles/scm_breeze $HOME/.scm_breeze
+ln -s $HOME/.dotfiles/git.scmbrc $HOME/.git.scmbrc
