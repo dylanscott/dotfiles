@@ -1,7 +1,7 @@
 export ZSH=$HOME/.dotfiles/oh-my-zsh
 ZSH_CUSTOM=$HOME/.dotfiles/zsh-custom
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME="tomita"
 
 plugins=(osx vi-mode gitfast tmux npm httpie zsh-syntax-highlighting)
 
