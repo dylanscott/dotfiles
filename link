@@ -3,3 +3,4 @@ ln -s $HOME/.dotfiles/omf/ $HOME/.config/omf/
 ln -s $HOME/.dotfiles/vimrc $HOME/.vimrc
 ln -s $HOME/.dotfiles/vimrc.bundles $HOME/.vimrc.bundles
 ln -s $HOME/.dotfiles/tmux.conf $HOME/.tmux.conf
+ln -s $HOME/.dotfiles/zshrc $HOME/.zshrc
