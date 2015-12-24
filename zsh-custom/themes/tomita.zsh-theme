@@ -7,7 +7,24 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-TOMITA_DIR_="$TOMITA_DIR_COLOR%~ "
+abbreviate() {
+  # abbreviated=$(echo $1 | sed -e "s/([^a-zA-Z]*[a-zA_Z]?).*/\1/")
+  abbreviated=$(echo $1 | sed -E "s/([^a-zA-Z]*[a-zA-Z]?).*/\1/")
+  echo $abbreviated
+}
+
+directory_name() {
+  DIR=$(echo $PWD | sed -e "s|^$HOME|~|g")
+  DIRS=("${(@f)$(echo $DIR | tr '/' '\n')}")
+  ABBREVIATED=()
+  for e in $DIRS; do
+    ABBREVIATED+=("$(abbreviate "$e")")
+  done
+  echo "${(j:/:)ABBREVIATED}"
+}
+
+TOMITA_DIR_='$(directory_name)'
+TOMITA_DIR_="$TOMITA_DIR_COLOR$TOMITA_DIR_ "
 TOMITA_GIT_="\$(git_prompt_info)"
 TOMITA_SUFFIX_="%{$fg[yellow]%}⏛  "
 
