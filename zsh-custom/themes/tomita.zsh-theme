@@ -7,20 +7,23 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-abbreviate() {
-  # abbreviated=$(echo $1 | sed -e "s/([^a-zA-Z]*[a-zA_Z]?).*/\1/")
-  abbreviated=$(echo $1 | sed -E "s/([^a-zA-Z]*[a-zA-Z]?).*/\1/")
-  echo $abbreviated
-}
-
 directory_name() {
-  DIR=$(echo $PWD | sed -e "s|^$HOME|~|g")
-  DIRS=("${(@f)$(echo $DIR | tr '/' '\n')}")
-  ABBREVIATED=()
-  for e in $DIRS; do
-    ABBREVIATED+=("$(abbreviate "$e")")
-  done
-  echo "${(j:/:)ABBREVIATED}"
+  if [[ -d $(git rev-parse --show-toplevel 2>/dev/null) ]]; then
+    # We're in a git repository
+    GIT_ROOT=$(basename $(git rev-parse --show-toplevel))
+    PREFIX="%{$fg_bold[magenta]%}± ${GIT_ROOT}%{$reset_color%}"
+    PATH_TO_CURRENT="${PWD#$(git rev-parse --show-toplevel)}"
+    if [[ -n $PATH_TO_CURRENT ]]; then
+      PATH_TO_CURRENT=" ${PATH_TO_CURRENT:1}"
+    fi
+  elif [[ $PWD = $HOME* ]]; then
+    PREFIX="~"
+    PATH_TO_CURRENT="${PWD#$HOME}"
+  else
+    PREFIX=""
+    PATH_TO_CURRENT="$PWD"
+  fi
+  echo "$PREFIX$TOMITA_DIR_COLOR$PATH_TO_CURRENT"
 }
 
 TOMITA_DIR_='$(directory_name)'
