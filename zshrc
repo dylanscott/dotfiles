@@ -17,7 +17,7 @@ BASE16_SHELL="$HOME/.dotfiles/base16-shell/base16-ocean.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # SCM Breeze
-[ -s "/Users/dylanscott/.scm_breeze/scm_breeze.sh" ] && source "/Users/dylanscott/.scm_breeze/scm_breeze.sh"
+[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 # override gst from git plugin
 unalias gst
 alias gst="gs"
