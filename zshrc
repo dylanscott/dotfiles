@@ -21,3 +21,6 @@ BASE16_SHELL="$HOME/.dotfiles/base16-shell/base16-ocean.dark.sh"
 # override gst from git plugin
 unalias gst
 alias gst="gs"
+
+export NVM_DIR="/Users/dscott/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
