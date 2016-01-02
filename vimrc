@@ -103,7 +103,6 @@ set guifont=Inconsolata-dz\ for\ Powerline:h15
 let g:Powerline_symbols = 'fancy'
 set t_Co=256
 set fillchars+=stl:\ ,stlnc:\
-set term=xterm-256color
 set termencoding=utf-8
 
 let base16colorspace=256
