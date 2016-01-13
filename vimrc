@@ -131,7 +131,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Open NERDTree automatically if no files were specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-let g:NERDTreeWinSize = 60
+let g:NERDTreeWinSize = 40
+set guioptions-=L
 
 " YCM
 let g:ycm_key_list_select_completion = ['<C-j>']
