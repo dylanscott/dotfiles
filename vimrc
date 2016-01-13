@@ -132,8 +132,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let g:NERDTreeWinSize = 40
-set guioptions-=L
 
 " YCM
 let g:ycm_key_list_select_completion = ['<C-j>']
 let g:ycm_key_list_previous_completion = ['<C-k>']
+
+" GUI
+set guioptions-=L
+set guifont=Inconsolata-dz\ for\ Powerline:h14
