@@ -50,11 +50,6 @@ noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <leader>l :Align
 nnoremap <leader>a :Ag<space>
-nnoremap <leader>d :NERDTreeToggle<CR>
-nnoremap <leader>f :NERDTreeFocus<CR>
-nnoremap <leader>F :NERDTreeFind<CR>
-nnoremap <leader>p :CtrlP<CR>
-nnoremap <leader>P :CtrlPClearCache<CR>:CtrlP<CR>
 nnoremap <leader>] :TagbarToggle<CR>
 nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
@@ -67,8 +62,6 @@ nnoremap <leader>q :cwindow<CR>
 cnoremap w!! %!sudo tee > /dev/null %
 
 " plugin settings
-let g:ctrlp_match_window = 'order:ttb,max:20'
-let g:NERDSpaceDelims=1
 let g:gitgutter_enabled = 0
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
@@ -102,7 +95,6 @@ vnoremap p "_dP
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 set nocursorline " don't highlight current line
-set guifont=Inconsolata-dz\ for\ Powerline:h15
 let g:Powerline_symbols = 'fancy'
 set t_Co=256
 set fillchars+=stl:\ ,stlnc:\
@@ -125,18 +117,37 @@ augroup END
 
 set hidden
 
-" NERDTree
-" Close NERDTree if it's the only remaining buffer
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" Open NERDTree automatically if no files were specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-let g:NERDTreeWinSize = 40
-
 " YCM
 let g:ycm_key_list_select_completion = ['<C-j>']
 let g:ycm_key_list_previous_completion = ['<C-k>']
 
 " GUI
 set guioptions-=L
-set guifont=Inconsolata-dz\ for\ Powerline:h14
+set guifont=Hack:h14
+
+" Unite
+nnoremap <leader>d :VimFilerExplorer -toggle -auto-cd<CR>
+nnoremap <leader>f :VimFilerExplorer -find -auto-cd<CR>
+nnoremap <leader>p :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
+nnoremap <leader>r :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
+nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
+nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
+nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr><Paste>
+let g:unite_source_history_yank_enable = 1
+let g:unite_source_file_mru_limit = 300
+let g:unite_source_rec_max_cache_files = 0
+if executable('ag')
+  " https://github.com/ggreer/the_silver_searcher
+  " Use ag in unite grep source.
+  let g:unite_source_rec_async_command = ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
+  let g:unite_source_grep_command = 'ag'
+endif
+call unite#custom#source( 'buffer', 'converters', ['converter_file_directory'])
+
+" Vimfiler
+let g:vimfiler_as_default_explorer = 1
+call vimfiler#custom#profile('default', 'context', {
+      \ 'safe': 0,
+      \ 'auto_cd': 1,
+      \ 'explorer': 1
+      \ })
