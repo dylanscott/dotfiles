@@ -123,6 +123,7 @@ let g:ycm_key_list_previous_completion = ['<C-k>']
 
 " GUI
 set guioptions-=L
+set guioptions-=e
 set guifont=Hack:h14
 
 " Unite
