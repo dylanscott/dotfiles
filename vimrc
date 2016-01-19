@@ -126,8 +126,8 @@ set guioptions-=L
 set guifont=Hack:h14
 
 " Unite
-nnoremap <leader>d :VimFilerExplorer -toggle -auto-cd<CR>
-nnoremap <leader>f :VimFilerExplorer -find -auto-cd<CR>
+nnoremap <leader>d :VimFilerExplorer -toggle -auto-cd -winwidth=80<CR>
+nnoremap <leader>f :VimFilerExplorer -find -auto-cd -winwidth=80<CR>
 nnoremap <leader>p :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
 nnoremap <leader>r :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
 nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
