@@ -152,3 +152,5 @@ call vimfiler#custom#profile('default', 'context', {
       \ 'auto_cd': 1,
       \ 'explorer': 1
       \ })
+
+nnoremap <C-W>o :MaximizerToggle<CR>

@@ -38,6 +38,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'ternjs/tern_for_vim'
+Plugin 'szw/vim-maximizer'
 
 " Unite
 Plugin 'Shougo/unite.vim'
