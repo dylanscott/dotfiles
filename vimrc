@@ -57,6 +57,9 @@ noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo '
 nnoremap <leader>b :YcmCompleter GoTo<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
 nnoremap <leader>q :cwindow<CR>
+nnoremap <leader>c :noh<CR>
+nnoremap <leader>p :CtrlP<CR>
+nnoremap <leader>P :CtrlPClearCache<CR>:CtrlP<CR>
 
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
@@ -129,7 +132,6 @@ set guifont=Hack:h14
 " Unite
 nnoremap <leader>d :VimFilerExplorer -toggle -auto-cd -winwidth=80<CR>
 nnoremap <leader>f :VimFilerExplorer -find -auto-cd -winwidth=80<CR>
-nnoremap <leader>p :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
 nnoremap <leader>r :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
 nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
 nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
@@ -144,6 +146,9 @@ if executable('ag')
   let g:unite_source_grep_command = 'ag'
 endif
 call unite#custom#source( 'buffer', 'converters', ['converter_file_directory'])
+" fuzzy matching ctrl-p style
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
 
 " Vimfiler
 let g:vimfiler_as_default_explorer = 1
