@@ -58,8 +58,6 @@ nnoremap <leader>b :YcmCompleter GoTo<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
 nnoremap <leader>q :cwindow<CR>
 nnoremap <leader>c :noh<CR>
-nnoremap <leader>p :CtrlP<CR>
-nnoremap <leader>P :CtrlPClearCache<CR>:CtrlP<CR>
 
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
@@ -130,12 +128,13 @@ set guioptions-=e
 set guifont=Hack:h14
 
 " Unite
-nnoremap <leader>d :VimFilerExplorer -toggle -auto-cd -winwidth=80<CR>
-nnoremap <leader>f :VimFilerExplorer -find -auto-cd -winwidth=80<CR>
+nnoremap <leader>d :VimFilerExplorer -toggle -auto-cd -winwidth=60<CR>
+nnoremap <leader>f :VimFilerExplorer -find -auto-cd -winwidth=60<CR>
 nnoremap <leader>r :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
 nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
 nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
-nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr><Paste>
+nnoremap <leader>p :<C-u>Unite -buffer-name=files -direction=botright -start-insert file_rec/async:!<cr>
+nnoremap <leader>e :<C-u>Unite -buffer-name=buffer -direction=botright buffer<cr><Paste>
 let g:unite_source_history_yank_enable = 1
 let g:unite_source_file_mru_limit = 300
 let g:unite_source_rec_max_cache_files = 0
