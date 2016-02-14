@@ -181,3 +181,9 @@ let g:syntastic_always_populate_loc_list = 1
 autocmd BufWritePre * :%s/\s\+$//e
 
 call camelcasemotion#CreateMotionMappings('<leader>')
+
+" UltiSnips
+inoremap <c-x><c-k> <c-x><c-k>
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/snippets']
+let g:UltiSnipsJumpForwardTrigger="<CR>"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/snippets']

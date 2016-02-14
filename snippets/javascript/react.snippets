@@ -1,0 +1,45 @@
+snippet t "jsx tag" w
+<${1}>${2:${VISUAL}}</${1/(\w+).*/$1/}>${0}
+endsnippet
+
+snippet tn "jsx tag (with newlines)" w
+<${1}>
+  ${2:${VISUAL}}
+</${1/(\w+).*/$1/}>${0}
+endsnippet
+
+snippet st "this.state" w
+this.state.${1}
+endsnippet
+
+snippet sst "this.setState" w
+this.setState({
+  ${1}
+})${0}
+endsnippet
+
+snippet pr "this.props" w
+this.props.${1}
+endsnippet
+
+snippet component "React Component class" b
+class ${1} extends Component {
+  render() {
+    ${0}
+  }
+}
+endsnippet
+
+snippet cdm "componentDidMount()" b
+  componentDidMount() {
+    ${0}
+  }
+endsnippet
+
+snippet cwr "componentWillReceiveProps()" b
+  componentWillReceiveProps(nextProps) {
+    ${0}
+  }
+endsnippet
+
+# vim:ft=snippets:
