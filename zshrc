@@ -27,3 +27,5 @@ alias glg="git log --stat"
 
 export NVM_DIR="/Users/dscott/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
