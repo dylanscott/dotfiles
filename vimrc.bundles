@@ -43,6 +43,7 @@ Plugin 'ternjs/tern_for_vim'
 Plugin 'szw/vim-maximizer'
 Plugin 'janko-m/vim-test'
 Plugin 'wesQ3/vim-windowswap'
+Plugin 'bkad/CamelCaseMotion'
 
 " Unite
 Plugin 'Shougo/unite.vim'

@@ -124,6 +124,7 @@ let g:ycm_key_list_previous_completion = ['<C-k>']
 
 " GUI
 set guioptions-=L
+set guioptions-=r
 set guioptions-=e
 set guifont=Hack:h14
 
@@ -170,3 +171,13 @@ call vimfiler#custom#profile('default', 'context', {
       \ })
 
 nnoremap <C-W>o :MaximizerToggle<CR>
+
+set autowrite
+
+let g:syntastic_check_on_open = 1
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = './node_modules/eslint/bin/eslint.js'
+let g:syntastic_always_populate_loc_list = 1
+autocmd BufWritePre * :%s/\s\+$//e
+
+call camelcasemotion#CreateMotionMappings('<leader>')
