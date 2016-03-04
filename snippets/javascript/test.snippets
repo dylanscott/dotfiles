@@ -10,13 +10,13 @@ endsnippet
 
 snippet it "it" b
 it('${1}', () => {
-  ${0:${VISUAL}}
+  ${0:${VISUAL:expect.fail()}}
 })
 endsnippet
 
 snippet ita "it (async)" b
 it('${1}', (done) => {
-  ${0:${VISUAL}}
+  ${0:${VISUAL:expect.fail()}}
   done()
 })
 endsnippet
