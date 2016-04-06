@@ -2,6 +2,11 @@ set shell=/bin/zsh
 set nocompatible
 syntax enable
 
+" source local vimrc if exists
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
+
 " configure Vundle
 filetype on " without this vim emits a zero exit status, later, because of :ft off
 filetype off
@@ -107,7 +112,9 @@ colorscheme base16-ocean
 
 set hlsearch
 
+let g:airline_theme = 'base16'
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#syntastic#enabled = 1
 " make Esc happen without waiting for timeoutlen
 " fixes Powerline delay
 augroup FastEscape
@@ -175,8 +182,7 @@ nnoremap <C-W>o :MaximizerToggle<CR>
 set autowrite
 
 let g:syntastic_check_on_open = 1
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exec = './node_modules/eslint/bin/eslint.js'
+let g:syntastic_aggregate_errors = 1
 let g:syntastic_always_populate_loc_list = 1
 autocmd BufWritePre * :%s/\s\+$//e
 
