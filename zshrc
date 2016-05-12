@@ -3,7 +3,7 @@ ZSH_CUSTOM=$HOME/.dotfiles/zsh-custom
 
 ZSH_THEME="tomita"
 
-plugins=(osx vi-mode gitfast tmux npm httpie zsh-syntax-highlighting)
+plugins=(osx vi-mode gitfast tmux npm httpie zsh-syntax-highlighting docker)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/aliases
@@ -29,3 +29,4 @@ export NVM_DIR="/Users/dscott/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+export PATH="/usr/local/sbin:$PATH"
