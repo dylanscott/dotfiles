@@ -1,3 +1,13 @@
 alias tk="tmux kill-session -t"
 alias vim="nvim"
-alias kgn="killall grunt node"
+alias kn="killall node"
+alias dc="docker-compose"
+
+function nv() {
+  if [ -z "$1" ]; then
+    echo "usage: nv [package-name]"
+    return 2
+  fi
+
+  jq -r .version "./node_modules/$1/package.json"
+}
