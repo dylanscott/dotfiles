@@ -193,4 +193,4 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/snippets']
 let g:vim_json_syntax_conceal = 0
 nnoremap <leader>b :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
-nnoremap <leader>r :YcmCompleter GoToReferences<CR>
+nnoremap <leader>r :YcmCompleter RefactorRename
