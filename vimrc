@@ -50,7 +50,11 @@ nnoremap <leader>g :GitGutterToggle<CR>
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 " nnoremap <leader>q :cwindow<CR>
 nnoremap <leader>c :noh<CR>
-let g:lt_location_list_toggle_map = '<leader>l'
+nnoremap <leader>d :VimFilerExplorer -toggle -auto-cd -winwidth=60<CR>
+nnoremap <leader>f :VimFilerExplorer -find -auto-cd -winwidth=60<CR>
+nnoremap <leader>p :GFiles<CR>
+nnoremap <leader>l :Lines<space>
+let g:lt_location_list_toggle_map = '<leader>m'
 let g:lt_quickfix_list_toggle_map = '<leader>q'
 
 " in case you forgot to sudo
@@ -116,11 +120,6 @@ set guioptions-=L
 set guioptions-=r
 set guioptions-=e
 set guifont=Hack:h14
-
-" Unite
-nnoremap <leader>d :VimFilerExplorer -toggle -auto-cd -winwidth=60<CR>
-nnoremap <leader>f :VimFilerExplorer -find -auto-cd -winwidth=60<CR>
-nnoremap <leader>p :<C-u>Unite -buffer-name=files -direction=botright -start-insert file_rec/async:!<CR>
 
 " Custom mappings for the unite buffer
 autocmd FileType unite call s:unite_settings()
