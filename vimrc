@@ -153,3 +153,7 @@ let g:localvimrc_whitelist='/Users/dscott/Code/ironclad.\?/.*'
 let g:deoplete#enable_at_startup = 1
 " don't complete in txt files
 let g:deoplete#lock_buffer_name_pattern = '\v(\.md|\.txt|\.git\/COMMIT_EDITMSG)'
+
+" neomake
+autocmd! BufWritePost,BufEnter * Neomake
+
