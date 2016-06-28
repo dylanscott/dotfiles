@@ -12,6 +12,8 @@ bindkey -v
 
 bindkey "^R" history-incremental-search-backward
 
+export TERM='screen-256color'
+
 # Base16 Shell
 BASE16_SHELL="$HOME/.dotfiles/base16/base16-ocean.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
