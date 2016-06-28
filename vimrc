@@ -146,3 +146,8 @@ nnoremap <C-W>o :MaximizerToggle<CR>
 set autowrite
 
 let g:localvimrc_whitelist='/Users/dscott/Code/ironclad.\?/.*'
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+" don't complete in txt files
+let g:deoplete#lock_buffer_name_pattern = '\v(\.md|\.txt|\.git\/COMMIT_EDITMSG)'
