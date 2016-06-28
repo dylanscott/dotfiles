@@ -2,23 +2,15 @@ set shell=/bin/zsh
 set nocompatible
 syntax enable
 
-" source local vimrc if exists
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
-
-" configure Vundle
 filetype on " without this vim emits a zero exit status, later, because of :ft off
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
-" install Vundle bundles
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
+" vim-plug
+call plug#begin()
+if filereadable(expand("~/.vimrc.plugins"))
+  source ~/.vimrc.plugins
 endif
-
-call vundle#end()
+call plug#end()
 
 filetype plugin indent on
 
@@ -53,10 +45,7 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
-" noremap <leader>l :Align
 nnoremap <leader>a :Ag<space>
-nnoremap <leader>] :TagbarToggle<CR>
-nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 " nnoremap <leader>q :cwindow<CR>
@@ -74,9 +63,6 @@ let g:gitgutter_enabled = 0
 if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
 " md is markdown
@@ -125,10 +111,6 @@ augroup END
 
 set hidden
 
-" YCM
-let g:ycm_key_list_select_completion = ['<C-j>']
-let g:ycm_key_list_previous_completion = ['<C-k>']
-
 " GUI
 set guioptions-=L
 set guioptions-=r
@@ -151,20 +133,6 @@ function! s:unite_settings()
   nmap <buffer> <ESC>   <Plug>(unite_exit)
 endfunction
 
-let g:unite_source_history_yank_enable = 1
-let g:unite_source_file_mru_limit = 300
-let g:unite_source_rec_max_cache_files = 0
-if executable('ag')
-  " https://github.com/ggreer/the_silver_searcher
-  " Use ag in unite grep source.
-  let g:unite_source_rec_async_command = ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
-  let g:unite_source_grep_command = 'ag'
-endif
-call unite#custom#source( 'buffer', 'converters', ['converter_file_directory'])
-" fuzzy matching ctrl-p style
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#filters#sorter_default#use(['sorter_rank'])
-
 " Vimfiler
 let g:vimfiler_as_default_explorer = 1
 call vimfiler#custom#profile('default', 'context', {
@@ -177,20 +145,4 @@ nnoremap <C-W>o :MaximizerToggle<CR>
 
 set autowrite
 
-let g:syntastic_check_on_open = 1
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_always_populate_loc_list = 1
-autocmd BufWritePre * :%s/\s\+$//e
-
-call camelcasemotion#CreateMotionMappings('<leader>')
-
-" UltiSnips
-inoremap <c-x><c-k> <c-x><c-k>
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/snippets']
-let g:UltiSnipsJumpForwardTrigger="<CR>"
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/snippets']
-
-let g:vim_json_syntax_conceal = 0
-nnoremap <leader>b :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>t :YcmCompleter GetType<CR>
-nnoremap <leader>r :YcmCompleter RefactorRename
+let g:localvimrc_whitelist='/Users/dscott/Code/ironclad.\?/.*'
