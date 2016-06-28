@@ -56,6 +56,9 @@ nnoremap <leader>p :GFiles<CR>
 nnoremap <leader>l :Lines<space>
 let g:lt_location_list_toggle_map = '<leader>m'
 let g:lt_quickfix_list_toggle_map = '<leader>q'
+" Move up and down in autocomplete with <c-j> and <c-k>
+inoremap <expr> <c-j> ("\<C-n>")
+inoremap <expr> <c-k> ("\<C-p>")
 
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
