@@ -1,5 +1,4 @@
 Plug 'airblade/vim-gitgutter'
-Plug 'rking/ag.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Valloric/ListToggle'
