@@ -25,7 +25,6 @@ Plugin 'vim-scripts/Align'
 Plugin 'vim-scripts/greplace.vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'chriskempson/base16-vim'
-Plugin 'ctrlpvim/ctrlp.vim'
 
 Plugin 'sheerun/vim-polyglot'
 Plugin 'leafgarland/typescript-vim'
