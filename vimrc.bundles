@@ -53,6 +53,9 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'embear/vim-localvimrc'
 Plugin 'elzr/vim-json'
 
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+
 " Unite
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/neomru.vim'

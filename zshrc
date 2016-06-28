@@ -32,3 +32,5 @@ export NVM_DIR="/Users/dscott/.nvm"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="/usr/local/sbin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
