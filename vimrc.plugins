@@ -16,7 +16,7 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'neomake/neomake'
 
 Plug 'carlitux/deoplete-ternjs'
-Plug 'dylanscott/deoplete-typescript'
+Plug 'mhartington/deoplete-typescript'
 
 " the pope
 Plug 'tpope/vim-commentary'
