@@ -17,6 +17,7 @@ Plug 'neomake/neomake'
 
 Plug 'carlitux/deoplete-ternjs'
 Plug 'mhartington/deoplete-typescript'
+Plug 'zchee/deoplete-jedi'
 
 " the pope
 Plug 'tpope/vim-commentary'
