@@ -34,3 +34,4 @@ eval "$(rbenv init -)"
 export PATH="/usr/local/sbin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_CTRL_R_OPTS="--exact"
