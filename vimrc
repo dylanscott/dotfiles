@@ -53,8 +53,8 @@ nnoremap <leader>c :noh<CR>
 nnoremap <leader>d :VimFilerExplorer -toggle -auto-cd -winwidth=60<CR>
 nnoremap <leader>f :VimFilerExplorer -find -auto-cd -winwidth=60<CR>
 nnoremap <leader>p :GFiles<CR>
-nnoremap <leader>l :Lines<space>
-let g:lt_location_list_toggle_map = '<leader>m'
+nnoremap <leader>/ :Lines<CR>
+let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>q'
 " Move up and down in autocomplete with <c-j> and <c-k>
 inoremap <expr> <c-j> ("\<C-n>")
@@ -63,7 +63,7 @@ inoremap <expr> <c-k> ("\<C-p>")
 " YCM
 nnoremap <leader>b :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
-nnoremap <leader>r :YcmCompleter RefactorRename 
+nnoremap <leader>r :YcmCompleter RefactorRename
 
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
@@ -77,12 +77,18 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 endif
 
-" md is markdown
-autocmd BufRead,BufNewFile *.md set filetype=markdown
-autocmd BufRead,BufNewFile *.md set spell
+augroup Misc
+  autocmd!
+  " md is markdown
+  autocmd BufRead,BufNewFile *.md set filetype=markdown
+  autocmd BufRead,BufNewFile *.md set spell
 
-" automatically rebalance windows on vim resize
-autocmd VimResized * :wincmd =
+  " automatically rebalance windows on vim resize
+  autocmd VimResized * :wincmd =
+
+  " remove trailing whitespace on save
+  autocmd BufWritePre * :%s/\s\+$//e
+augroup END
 
 " Fix Cursor in TMUX
 if exists('$TMUX')
@@ -130,7 +136,10 @@ set guioptions-=e
 set guifont=Hack:h14
 
 " Custom mappings for the unite buffer
-autocmd FileType unite call s:unite_settings()
+augroup Unite
+  autocmd!
+  autocmd FileType unite call s:unite_settings()
+augroup END
 function! s:unite_settings()
   " Enable navigation with control-j and control-k in insert mode
   imap <buffer> <C-j>   <Plug>(unite_select_next_line)
@@ -160,7 +169,11 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#lock_buffer_name_pattern = '\v(\.md|\.txt|\.git\/COMMIT_EDITMSG)'
 
 " neomake
-autocmd! BufWritePost,BufEnter * Neomake
+augroup Neomake
+  autocmd!
+  autocmd! BufWritePost,BufReadPost * Neomake
+augroup END
+let g:neomake_open_list = 2 " open loclist on errors but preserve cursor pos
 
 " disable builtin snippets
 let g:neosnippet#disable_runtime_snippets = {
