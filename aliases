@@ -11,3 +11,10 @@ function nv() {
 
   jq -r .version "./node_modules/$1/package.json"
 }
+
+function guo() {
+  BRANCH=$(git rev-parse --abbrev-ref HEAD)
+  git branch --set-upstream-to="origin/$BRANCH" $BRANCH
+}
+
+alias vf="vim \$(fzf)"
