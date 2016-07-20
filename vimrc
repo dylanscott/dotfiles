@@ -60,6 +60,11 @@ let g:lt_quickfix_list_toggle_map = '<leader>q'
 inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
 
+" YCM
+nnoremap <leader>b :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>t :YcmCompleter GetType<CR>
+nnoremap <leader>r :YcmCompleter RefactorRename 
+
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
 
@@ -157,3 +162,7 @@ let g:deoplete#lock_buffer_name_pattern = '\v(\.md|\.txt|\.git\/COMMIT_EDITMSG)'
 " neomake
 autocmd! BufWritePost,BufEnter * Neomake
 
+" disable builtin snippets
+let g:neosnippet#disable_runtime_snippets = {
+      \   '_' : 1,
+      \ }
