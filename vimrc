@@ -54,6 +54,7 @@ nnoremap <leader>d :VimFilerExplorer -toggle -auto-cd -winwidth=60<CR>
 nnoremap <leader>f :VimFilerExplorer -find -auto-cd -winwidth=60<CR>
 nnoremap <leader>p :GFiles<CR>
 nnoremap <leader>/ :Lines<CR>
+nnoremap <leader><Tab> :Buffers<CR>
 let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>q'
 " Move up and down in autocomplete with <c-j> and <c-k>
