@@ -28,6 +28,7 @@ Plug 'blockloop/vim-swigjs'
 " vanity
 Plug 'chriskempson/base16-vim'
 Plug 'bling/vim-airline'
+Plug 'bling/vim-bufferline'
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

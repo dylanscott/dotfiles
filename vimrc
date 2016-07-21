@@ -116,9 +116,12 @@ colorscheme base16-ocean
 
 set hlsearch
 
+" airline / bufferline
 let g:airline_theme = 'base16'
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:bufferline_echo = 0
+
 " make Esc happen without waiting for timeoutlen
 " fixes Powerline delay
 augroup FastEscape
