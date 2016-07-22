@@ -66,6 +66,14 @@ nnoremap <leader>b :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
 nnoremap <leader>r :YcmCompleter RefactorRename
 
+let g:ycm_key_list_select_completion = ['<C-j>']
+let g:ycm_key_list_previous_completion = ['<C-k>']
+
+" UltiSnips
+inoremap <c-x><c-k> <c-x><c-k>
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/snippets']
+let g:UltiSnipsJumpForwardTrigger="<CR>"
+
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
 

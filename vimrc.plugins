@@ -7,9 +7,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'embear/vim-localvimrc'
 Plug 'Shougo/unite.vim' | Plug 'Shougo/vimfiler'
 
-Plug 'Shougo/neosnippet.vim'
 Plug 'neomake/neomake'
 Plug 'Valloric/YouCompleteMe'
+Plug 'SirVer/ultisnips'
 
 " the pope
 Plug 'tpope/vim-commentary'
