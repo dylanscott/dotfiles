@@ -3,7 +3,7 @@ ZSH_CUSTOM=$HOME/.dotfiles/zsh-custom
 
 ZSH_THEME="tomita"
 
-plugins=(osx vi-mode gitfast tmux npm httpie zsh-syntax-highlighting docker)
+plugins=(osx vi-mode gitfast tmux npm httpie zsh-syntax-highlighting docker colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/aliases
