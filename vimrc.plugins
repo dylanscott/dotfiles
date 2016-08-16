@@ -5,6 +5,8 @@ Plug 'Valloric/ListToggle'
 Plug 'janko-m/vim-test'
 Plug 'easymotion/vim-easymotion'
 Plug 'embear/vim-localvimrc'
+Plug 'mbbill/undotree'
+Plug 'szw/vim-maximizer'
 Plug 'Shougo/unite.vim' | Plug 'Shougo/vimfiler'
 
 Plug 'neomake/neomake'
