@@ -64,7 +64,7 @@ inoremap <expr> <c-k> ("\<C-p>")
 " YCM
 nnoremap <leader>b :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
-nnoremap <leader>r :YcmCompleter RefactorRename
+nnoremap <leader>r :YcmCompleter RefactorRename<space>
 
 let g:ycm_key_list_select_completion = ['<C-j>']
 let g:ycm_key_list_previous_completion = ['<C-k>']
