@@ -191,3 +191,6 @@ let g:neomake_open_list = 2 " open loclist on errors but preserve cursor pos
 let g:neosnippet#disable_runtime_snippets = {
       \   '_' : 1,
       \ }
+
+let g:windowswap_map_keys = 0 "prevent default bindings
+nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<CR>
