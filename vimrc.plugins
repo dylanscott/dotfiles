@@ -7,6 +7,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'embear/vim-localvimrc'
 Plug 'mbbill/undotree'
 Plug 'szw/vim-maximizer'
+Plug 'wesQ3/vim-windowswap'
 Plug 'Shougo/unite.vim' | Plug 'Shougo/vimfiler'
 
 Plug 'neomake/neomake'
@@ -26,6 +27,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'ap/vim-css-color'
 Plug 'blockloop/vim-swigjs'
+Plug 'hashivim/vim-terraform'
 
 " vanity
 Plug 'chriskempson/base16-vim'
