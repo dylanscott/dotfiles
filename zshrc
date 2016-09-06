@@ -40,3 +40,9 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt HIST_REDUCE_BLANKS
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/dscott/Downloads/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/dscott/Downloads/google-cloud-sdk/completion.zsh.inc'
