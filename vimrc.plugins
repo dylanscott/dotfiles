@@ -29,6 +29,7 @@ Plug 'ap/vim-css-color'
 Plug 'blockloop/vim-swigjs'
 Plug 'hashivim/vim-terraform'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'tfnico/vim-gradle'
 
 " vanity
 Plug 'chriskempson/base16-vim'
