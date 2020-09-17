@@ -6,3 +6,5 @@ ln -s $HOME/.dotfiles/tmux.conf $HOME/.tmux.conf
 ln -s $HOME/.dotfiles/tmux.status.conf $HOME/.tmux.status.conf
 ln -s $HOME/.dotfiles/zshrc $HOME/.zshrc
 ln -s $HOME/.dotfiles/scm_breeze $HOME/.scm_breeze
+mkdir -p $HOME/.tmux/plugins
+ln -s $HOME/.dotfiles/tpm $HOME/.tmux/plugins/tpm
