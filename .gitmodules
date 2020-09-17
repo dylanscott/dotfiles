@@ -10,6 +10,3 @@
 [submodule "zsh-custom/plugins/zsh-syntax-highlighting"]
 	path = zsh-custom/plugins/zsh-syntax-highlighting
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "shpotify"]
-	path = shpotify
-	url = https://github.com/hnarayanan/shpotify.git
