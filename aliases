@@ -20,3 +20,4 @@ function guo() {
 alias vf="vim \$(fzf)"
 
 alias ytdl='youtube-dl -o "/Users/dylanscott/Downloads/%(title)s.%(ext)s"'
+alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'

@@ -3,7 +3,7 @@ ZSH_CUSTOM=$HOME/.dotfiles/zsh-custom
 
 ZSH_THEME="tomita"
 
-plugins=(osx vi-mode gitfast tmux npm httpie zsh-syntax-highlighting docker colored-man-pages)
+plugins=(macos vi-mode gitfast tmux npm httpie zsh-syntax-highlighting docker colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/aliases
@@ -33,3 +33,11 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 
 [ -s "/Users/dylanscott/.scm_breeze/scm_breeze.sh" ] && source "/Users/dylanscott/.scm_breeze/scm_breeze.sh"
+
+vlco() {
+  find "$1" -type f | sort -r | xargs -I '{}' open -a /Applications/VLC.app/Contents/MacOS/VLC '{}'
+}
+
+export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+source "$HOME/Hex/hex/scripts/mfa/mfa.sh"

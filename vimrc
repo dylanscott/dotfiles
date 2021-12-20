@@ -40,7 +40,7 @@ set wildmenu                                                 " show a navigable 
 set wildmode=longest,list,full
 
 " keyboard shortcuts
-let mapleader = ','
+let mapleader = ","
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
