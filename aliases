@@ -1,5 +1,4 @@
 alias tk="tmux kill-session -t"
-alias vim="nvim"
 alias kn="killall node"
 alias dc="docker-compose"
 
