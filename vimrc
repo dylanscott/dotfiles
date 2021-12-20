@@ -161,31 +161,14 @@ function! s:unite_settings()
   nmap <buffer> <ESC>   <Plug>(unite_exit)
 endfunction
 
-" Vimfiler
-let g:vimfiler_as_default_explorer = 1
-call vimfiler#custom#profile('default', 'context', {
-      \ 'safe': 0,
-      \ 'auto_cd': 1,
-      \ 'explorer': 1
-      \ })
-
 nnoremap <C-W>o :MaximizerToggle<CR>
 
 set autowrite
-
-let g:localvimrc_whitelist='/Users/dscott/Code/ironclad.\?/.*'
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
 " don't complete in txt files
 let g:deoplete#lock_buffer_name_pattern = '\v(\.md|\.txt|\.git\/COMMIT_EDITMSG)'
-
-" neomake
-augroup Neomake
-  autocmd!
-  autocmd! BufWritePost,BufReadPost * Neomake
-augroup END
-let g:neomake_open_list = 2 " open loclist on errors but preserve cursor pos
 
 " disable builtin snippets
 let g:neosnippet#disable_runtime_snippets = {

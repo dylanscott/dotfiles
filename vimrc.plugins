@@ -10,9 +10,9 @@ Plug 'szw/vim-maximizer'
 Plug 'wesQ3/vim-windowswap'
 Plug 'Shougo/unite.vim' | Plug 'Shougo/vimfiler'
 
-Plug 'neomake/neomake'
-Plug 'Valloric/YouCompleteMe'
-Plug 'SirVer/ultisnips'
+" Plug 'neomake/neomake'
+" Plug 'Valloric/YouCompleteMe'
+" Plug 'SirVer/ultisnips'
 
 " the pope
 Plug 'tpope/vim-commentary'
