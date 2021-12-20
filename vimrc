@@ -119,9 +119,10 @@ set t_Co=256
 set fillchars+=stl:\ ,stlnc:\
 set termencoding=utf-8
 
-let base16colorspace=256
-set background=dark
-colorscheme base16-ocean
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 set hlsearch
 
