@@ -1,6 +1,5 @@
-alias tk="tmux kill-session -t"
 alias kn="killall node"
-alias dc="docker-compose"
+alias dc="docker compose"
 
 function nv() {
   if [ -z "$1" ]; then
@@ -20,3 +19,15 @@ alias vf="vim \$(fzf)"
 
 alias ytdl='youtube-dl -o "/Users/dylanscott/Downloads/%(title)s.%(ext)s"'
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
+function whoport() {
+  if [ -z "$1" ]; then
+    echo "usage: nv [package-name]"
+    return 2
+  fi
+
+  sudo lsof -i -P | grep LISTEN | grep :$1
+}
+alias k="kubectl"
+alias kx="kubectl ctx"
+alias tmux="TERM=tmux-256color tmux"
+alias vim="nvim"

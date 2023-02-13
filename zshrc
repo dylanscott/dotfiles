@@ -3,7 +3,7 @@ ZSH_CUSTOM=$HOME/.dotfiles/zsh-custom
 
 ZSH_THEME="tomita"
 
-plugins=(osx vi-mode gitfast tmux npm httpie zsh-syntax-highlighting docker colored-man-pages)
+plugins=(macos vi-mode gitfast tmux npm httpie zsh-syntax-highlighting docker colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/aliases
@@ -16,15 +16,12 @@ export TERM='xterm-256color'
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-            eval "$("$BASE16_SHELL/profile_helper.sh")"
+#[ -n "$PS1" ] && \
+    #[ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+            #eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 # SCM Breeze
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
-
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_CTRL_R_OPTS="--exact"
@@ -40,6 +37,12 @@ vlco() {
   find "$1" -type f | sort -r | xargs -I '{}' open -a /Applications/VLC.app/Contents/MacOS/VLC '{}'
 }
 
-export PATH="$HOME/.poetry/bin:$PATH"
+. "$HOME/.cargo/env"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 source "$HOME/Hex/hex/scripts/mfa/mfa.sh"
+source "$HOME/Hex/hex/scripts/db-tunnel.sh"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+export HOMEBREW_NO_AUTO_UPDATE=1
