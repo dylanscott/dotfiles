@@ -1,3 +1,15 @@
+alias ga="git add"
+alias gap="git add -p"
+alias gc="git commit"
+alias gca="git commit --amend"
+alias gco="git checkout"
+alias gd="git diff"
+alias glg="git log --stat"
+alias grs="git reset"
+alias gp="git pull"
+alias gd="git diff"
+alias gdc="git diff --cached"
+
 alias kn="killall node"
 alias dc="docker compose"
 
@@ -16,18 +28,6 @@ function guo() {
 }
 
 alias vf="vim \$(fzf)"
-
-alias ytdl='youtube-dl -o "/Users/dylanscott/Downloads/%(title)s.%(ext)s"'
-alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
-function whoport() {
-  if [ -z "$1" ]; then
-    echo "usage: nv [package-name]"
-    return 2
-  fi
-
-  sudo lsof -i -P | grep LISTEN | grep :$1
-}
 alias k="kubectl"
 alias kx="kubectl ctx"
 alias tmux="TERM=tmux-256color tmux"
-alias vim="nvim"

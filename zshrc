@@ -42,7 +42,12 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 source "$HOME/Hex/hex/scripts/mfa/mfa.sh"
 source "$HOME/Hex/hex/scripts/db-tunnel.sh"
+source "$HOME/Hex/hex/scripts/assumerole.sh"
+source "$HOME/Hex/hex/scripts/sso_login.sh"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm

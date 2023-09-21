@@ -1,4 +1,4 @@
-set shell=/bin/zsh
+set shell=/opt/homebrew/bin/zsh
 set nocompatible
 syntax enable
 
