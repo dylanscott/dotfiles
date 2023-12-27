@@ -9,3 +9,7 @@ function vim() {
 function cat() {
   scmpuff exec --relative -- bat "$@"
 }
+
+function gsp() {
+  scmpuff exec -- git stash push "$@"
+}

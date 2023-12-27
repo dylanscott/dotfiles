@@ -1,3 +1,4 @@
+alias gs="scmpuff_status"
 alias ga="git add"
 alias gap="git add -p"
 alias gc="git commit"
@@ -10,6 +11,7 @@ alias grs="git reset"
 alias gp="git pull"
 alias gd="git diff"
 alias gdc="git diff --cached"
+alias gb="git branch --sort=-committerdate"
 
 alias kn="killall node"
 alias dc="docker compose"
@@ -22,12 +24,6 @@ function nv() {
 
   jq -r .version "./node_modules/$1/package.json"
 }
-
-function guo() {
-  BRANCH=$(git rev-parse --abbrev-ref HEAD)
-  git branch --set-upstream-to="origin/$BRANCH" $BRANCH
-}
-
 alias vf="vim \$(fzf)"
 alias k="kubectl"
 alias kx="kubectl ctx"
