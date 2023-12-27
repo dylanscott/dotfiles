@@ -1,5 +1,4 @@
 #!/bin/sh
-ln -sfn $HOME/.dotfiles/omf $HOME/.config/omf
 ln -sfn $HOME/.dotfiles/vimrc $HOME/.vimrc
 ln -sfn $HOME/.dotfiles/vimrc.plugins $HOME/.vimrc.plugins
 ln -sfn $HOME/.dotfiles/tmux.conf $HOME/.tmux.conf
