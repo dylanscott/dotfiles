@@ -1,3 +1,5 @@
+DOTFILES=$(realpath ${BASH_SOURCE})
+
 # Source Prezto.
 if [[ -s "$HOME/.zprezto/init.zsh" ]]; then
   source "$HOME/.zprezto/init.zsh"
@@ -21,9 +23,7 @@ eval "$(scmpuff init --shell=zsh --aliases=false)"
 source ~/.aliases
 source ~/.functions
 [ -s ~/.localrc ] && source ~/.localrc
-
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+source $DOTFILES/nvm.zsh
 
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
