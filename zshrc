@@ -1,6 +1,6 @@
 # Source Prezto.
-if [[ -s "$HOME/.dotfiles/prezto/init.zsh" ]]; then
-  source "$HOME/.dotfiles/prezto/init.zsh"
+if [[ -s "$HOME/.zprezto/init.zsh" ]]; then
+  source "$HOME/.zprezto/init.zsh"
 fi
 
 export TERM='xterm-256color'
