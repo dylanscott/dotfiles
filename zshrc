@@ -1,5 +1,3 @@
-DOTFILES=$(realpath ${BASH_SOURCE})
-
 # Source Prezto.
 if [[ -s "$HOME/.zprezto/init.zsh" ]]; then
   source "$HOME/.zprezto/init.zsh"
@@ -23,7 +21,7 @@ eval "$(scmpuff init --shell=zsh --aliases=false)"
 source ~/.aliases
 source ~/.functions
 [ -s ~/.localrc ] && source ~/.localrc
-source $DOTFILES/nvm.zsh
+source ~/.nvm.zsh
 
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"

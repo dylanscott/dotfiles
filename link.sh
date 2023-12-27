@@ -8,3 +8,4 @@ ln -sfn $HOME/.dotfiles/scm_breeze $HOME/.scm_breeze
 mkdir -p $HOME/.tmux/plugins
 ln -sfn $HOME/.dotfiles/tpm $HOME/.tmux/plugins/tpm
 ln -sfn $HOME/.dotfiles/prezto $HOME/.zprezto
+ln -sfn $HOME/.dotfiles/nvm.zsh $HOME/.nvm.zsh
