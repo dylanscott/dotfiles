@@ -1,3 +1,5 @@
+alias python="python3"
+
 alias gs="scmpuff_status"
 alias ga="git add"
 alias gap="git add -p"
@@ -15,16 +17,9 @@ alias gb="git branch --sort=-committerdate"
 
 alias kn="killall node"
 alias dc="docker compose"
-
-function nv() {
-  if [ -z "$1" ]; then
-    echo "usage: nv [package-name]"
-    return 2
-  fi
-
-  jq -r .version "./node_modules/$1/package.json"
-}
 alias vf="vim \$(fzf)"
 alias k="kubectl"
 alias kx="kubectl ctx"
 alias tmux="TERM=tmux-256color tmux"
+
+alias cat="bat"
