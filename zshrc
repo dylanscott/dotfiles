@@ -1,53 +1,58 @@
-export ZSH=$HOME/.dotfiles/oh-my-zsh
-ZSH_CUSTOM=$HOME/.dotfiles/zsh-custom
-
-ZSH_THEME="tomita"
-
-plugins=(macos vi-mode gitfast tmux npm httpie zsh-syntax-highlighting docker colored-man-pages)
-
-source $ZSH/oh-my-zsh.sh
-source $HOME/.dotfiles/aliases
-
-bindkey -v
-
-bindkey "^R" history-incremental-search-backward
+# Source Prezto.
+if [[ -s "$HOME/.dotfiles/prezto/init.zsh" ]]; then
+  source "$HOME/.dotfiles/prezto/init.zsh"
+fi
 
 export TERM='xterm-256color'
-
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-#[ -n "$PS1" ] && \
-    #[ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-            #eval "$("$BASE16_SHELL/profile_helper.sh")"
-
-# SCM Breeze
-[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_CTRL_R_OPTS="--exact"
 
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 
-[ -s "/Users/dylanscott/.scm_breeze/scm_breeze.sh" ] && source "/Users/dylanscott/.scm_breeze/scm_breeze.sh"
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_INSTALL_UPGRADE=1
 
-vlco() {
-  find "$1" -type f | sort -r | xargs -I '{}' open -a /Applications/VLC.app/Contents/MacOS/VLC '{}'
-}
-
-. "$HOME/.cargo/env"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-source "$HOME/Hex/hex/scripts/mfa/mfa.sh"
-source "$HOME/Hex/hex/scripts/db-tunnel.sh"
-source "$HOME/Hex/hex/scripts/assumerole.sh"
-source "$HOME/Hex/hex/scripts/sso_login.sh"
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
-export HOMEBREW_NO_AUTO_UPDATE=1
+eval "$(scmpuff init --shell=zsh --aliases=false)"
+
+source ~/.aliases
+source ~/.functions
+[ -s ~/.localrc ] && source ~/.localrc
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+source ~/.zplug/init.zsh
+zplug "lib/completion", from:oh-my-zsh
+
+zplug "modules/prompt", from:prezto
+zplug "modules/directory", from:prezto
+zplug "modules/osx", from:prezto
+
+zplug "jeffreytse/zsh-vi-mode"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+zplug "MichaelAquilina/zsh-autoswitch-virtualenv"
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+zplug load
+
+function zvm_after_init() {
+  # otherwise zsh-vi-mode clobbers ^R binding
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+}
+
